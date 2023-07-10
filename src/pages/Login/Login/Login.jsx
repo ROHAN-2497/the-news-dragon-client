@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
+import useTitle from "../../../Hook/useTitle";
 
 const Login = () => {
   const { signInUser } = useContext(AuthContext);
@@ -10,6 +11,7 @@ const Login = () => {
  const location = useLocation();
  console.log('login page location' , location);
  const from = location.state?.from?.pathname || '/category/0'
+ useTitle('Login')
 
   const handleSignIn = (event) => {
     event.preventDefault();
